@@ -461,11 +461,11 @@ function Home() {
 
                   <div className="home-service-link">
 
-                    <span>
-                      Know More
-                    </span>
+                   <Link to="/services" className="home-service-link">
+              <span>Know More</span>
+              <i className="fa-solid fa-arrow-right"></i>
+            </Link>
 
-                    <i className="fa-solid fa-arrow-right"></i>
 
                   </div>
 
