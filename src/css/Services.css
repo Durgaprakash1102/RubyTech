@@ -1,0 +1,1006 @@
+/* =========================================================
+   SERVICES PAGE - ALWAYS VISIBLE HOVER EFFECTS
+========================================================= */
+
+:root {
+  --ruby-red: #b9141b;
+  --ruby-dark: #b9141b;
+  --ruby-light: #fef0f0;
+  --ruby-light-2: #fff5f5;
+  --text-dark: #1a1a1a;
+  --text-muted: #555555;
+  --white: #ffffff;
+  --max-width: 1400px;
+  --transition: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* =========================================================
+   SERVICES PAGE
+========================================================= */
+
+.services-page {
+  width: 100%;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+/* =========================================================
+   FULL BANNER HERO
+========================================================= */
+
+.services-banner-full {
+  width: 100%;
+  min-height: 480px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.services-banner-full-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.services-banner-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: bannerZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes bannerZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.services-banner-full-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(10, 5, 5, 0.88) 0%,
+    rgba(26, 8, 10, 0.8) 40%,
+    rgba(58, 12, 20, 0.7) 70%,
+    rgba(10, 5, 5, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.services-banner-full-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-full-content {
+  max-width: 620px;
+}
+
+.banner-full-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--white);
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.06);
+  width: fit-content;
+  margin-bottom: 18px;
+  backdrop-filter: blur(4px);
+  margin-left: auto;
+}
+
+.banner-full-tag i {
+  font-size: 14px;
+}
+
+.banner-full-content h1 {
+  font-size: clamp(36px, 4.8vw, 60px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: var(--white);
+  margin: 0 0 16px;
+}
+
+.banner-full-content h1 span {
+  color: var(--ruby-red);
+  position: relative;
+}
+
+.banner-full-content h1 span::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--ruby-red);
+  border-radius: 4px;
+  opacity: 0.25;
+}
+
+.banner-full-content p {
+  font-size: clamp(16px, 1.1vw, 19px);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+  max-width: 480px;
+  margin: 0 0 28px;
+}
+
+/* =========================================================
+   HERO BUTTONS - BOTH AS BUTTONS
+========================================================= */
+
+.banner-full-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Primary Button - Talk to an Expert */
+.banner-full-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 34px;
+  background: var(--ruby-red);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all var(--transition);
+  box-shadow: 0 4px 24px rgba(215, 25, 32, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.banner-full-btn-primary:hover {
+  background: var(--ruby-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(215, 25, 32, 0.4);
+}
+
+.banner-full-btn-primary i {
+  transition: transform 0.3s ease;
+}
+
+.banner-full-btn-primary:hover i {
+  transform: translateX(4px);
+}
+
+/* Secondary Button - Learn More (Outline Button) */
+.banner-full-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 34px;
+  background: transparent;
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.banner-full-btn-secondary:hover {
+  border-color: var(--ruby-red);
+  background: rgba(215, 25, 32, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(215, 25, 32, 0.1);
+}
+
+.banner-full-btn-secondary i {
+  transition: transform 0.3s ease;
+}
+
+.banner-full-btn-secondary:hover i {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   SERVICES CARDS
+========================================================= */
+
+.services-cards-section {
+  width: 100%;
+  padding: 70px 0 90px;
+  background: #f8f9fa;
+}
+
+.services-cards-header {
+  max-width: var(--max-width);
+  margin: 0 auto 55px;
+  padding: 0 60px;
+  text-align: center;
+}
+
+.cards-badge {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ruby-red);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px;
+  background: var(--ruby-light);
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+.cards-badge i {
+  font-size: 12px;
+}
+
+.services-cards-header h2 {
+  font-size: clamp(34px, 4vw, 50px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--text-dark);
+  margin: 0 0 14px;
+}
+
+.services-cards-header h2 span {
+  color: var(--ruby-red);
+}
+
+.services-cards-header p {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.services-cards-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* =========================================================
+   SERVICE CARD - ALWAYS VISIBLE HOVER EFFECTS
+========================================================= */
+
+.service-card-hover-active {
+  border-radius: 24px;
+  padding: 36px 30px 30px;
+  border: 2px solid transparent;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardSlide 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes cardSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Even cards - White background with border */
+.card-even {
+  background: var(--white);
+  border-color: #e8e8e8;
+}
+
+/* Odd cards - Light Red background with border */
+.card-odd {
+  background: var(--ruby-light-2);
+  border-color: rgba(215, 25, 32, 0.08);
+}
+
+/* =========================================================
+   ALWAYS VISIBLE - TOP RED LINE (Always There)
+========================================================= */
+
+.service-card-hover-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ruby-red), var(--ruby-dark));
+  transform: scaleX(1);
+  transform-origin: left;
+  opacity: 0.15;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.service-card-hover-active:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   ALWAYS VISIBLE - ICON (Always Red Background)
+========================================================= */
+
+.service-card-hover-active-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: var(--ruby-red);
+  color: var(--white);
+  margin-bottom: 18px;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 16px rgba(215, 25, 32, 0.15);
+}
+
+.card-odd .service-card-hover-active-icon {
+  background: var(--ruby-red);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(215, 25, 32, 0.12);
+}
+
+.service-card-hover-active:hover .service-card-hover-active-icon {
+  transform: scale(1.08) rotate(-6deg);
+  box-shadow: 0 8px 30px rgba(215, 25, 32, 0.25);
+}
+
+/* =========================================================
+   ALWAYS VISIBLE - TITLE (Always Dark)
+========================================================= */
+
+.service-card-hover-active h3 {
+  font-size: clamp(20px, 1.3vw, 22px);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+/* =========================================================
+   ALWAYS VISIBLE - FEATURES (Always Dark)
+========================================================= */
+
+.service-card-hover-active p {
+  font-size: clamp(15px, 0.9vw, 16px);
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+.service-card-hover-active-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.service-card-hover-active-feature {
+  font-size: clamp(14px, 0.8vw, 15px);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.service-card-hover-active-feature i {
+  color: var(--ruby-red);
+  font-size: 12px;
+  opacity: 0.6;
+  width: 16px;
+  transition: opacity 0.3s ease;
+}
+
+/* =========================================================
+   ALWAYS VISIBLE - BORDER (Always Visible)
+========================================================= */
+
+.card-even {
+  border-color: #e0e0e0;
+}
+
+.card-odd {
+  border-color: rgba(215, 25, 32, 0.1);
+}
+
+/* =========================================================
+   ON HOVER - ENHANCED EFFECTS
+========================================================= */
+
+.service-card-hover-active:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 60px rgba(215, 25, 32, 0.06);
+}
+
+.card-even:hover {
+  border-color: var(--ruby-red);
+}
+
+.card-odd:hover {
+  border-color: var(--ruby-red);
+  background: var(--ruby-light);
+}
+
+.service-card-hover-active:hover h3 {
+  color: var(--ruby-red);
+}
+
+.service-card-hover-active:hover .service-card-hover-active-feature {
+  color: var(--text-dark);
+}
+
+.service-card-hover-active:hover .service-card-hover-active-feature i {
+  opacity: 1;
+}
+
+/* =========================================================
+   KNOW MORE BUTTON - WITH BORDER
+========================================================= */
+
+.service-card-hover-active-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--ruby-red);
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all var(--transition);
+  width: fit-content;
+  border: 2px solid var(--ruby-red);
+  cursor: pointer;
+}
+
+.card-odd .service-card-hover-active-btn {
+  border-color: var(--ruby-red);
+}
+
+.service-card-hover-active-btn i {
+  transition: transform 0.3s ease;
+}
+
+.service-card-hover-active-btn:hover {
+  background: var(--ruby-red);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(215, 25, 32, 0.2);
+}
+
+.service-card-hover-active-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+
+.services-cta-section {
+  width: 100%;
+  padding: 0;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #f0f0f0;
+}
+
+.services-cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.cta-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.04;
+}
+
+.c1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  right: -50px;
+  background: var(--ruby-red);
+  animation: ctaFloat1 8s ease-in-out infinite;
+}
+
+.c2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  left: 10%;
+  background: var(--ruby-dark);
+  animation: ctaFloat2 10s ease-in-out infinite 1s;
+}
+
+.c3 {
+  width: 150px;
+  height: 150px;
+  top: 30%;
+  left: -30px;
+  background: var(--ruby-red);
+  animation: ctaFloat1 6s ease-in-out infinite 2s;
+}
+
+@keyframes ctaFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-20px, 20px) scale(1.05); }
+}
+
+@keyframes ctaFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -20px) scale(1.05); }
+}
+
+.services-cta-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 60px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-badge {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ruby-red);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 20px;
+  background: var(--ruby-light);
+  border-radius: 50px;
+  margin-bottom: 14px;
+}
+
+.cta-badge i {
+  font-size: 14px;
+}
+
+.services-cta-container h2 {
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--text-dark);
+  margin: 0 0 16px;
+}
+
+.services-cta-container h2 span {
+  color: var(--ruby-red);
+}
+
+.services-cta-container p {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 550px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 42px;
+  background: var(--ruby-red);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all var(--transition);
+  box-shadow: 0 4px 24px rgba(215, 25, 32, 0.15);
+}
+
+.cta-btn:hover {
+  background: var(--ruby-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(215, 25, 32, 0.25);
+}
+
+.cta-btn i {
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (min-width: 1500px) {
+  .services-banner-full {
+    padding: 80px 0;
+    min-height: 550px;
+  }
+  
+  .services-banner-full-container {
+    padding: 0 80px;
+  }
+  
+  .services-cards-grid {
+    padding: 0 80px;
+    gap: 34px;
+  }
+  
+  .services-cards-header {
+    padding: 0 80px;
+  }
+  
+  .services-cta-container {
+    padding: 90px 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .services-banner-full {
+    padding: 50px 0;
+    min-height: 440px;
+  }
+  
+  .services-banner-full-container {
+    padding: 0 40px;
+  }
+  
+  .services-cards-grid {
+    padding: 0 40px;
+    gap: 24px;
+  }
+  
+  .services-cards-header {
+    padding: 0 40px;
+  }
+  
+  .services-cta-container {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 950px) {
+  .services-banner-full {
+    padding: 40px 0;
+    min-height: 400px;
+  }
+  
+  .services-banner-full-container {
+    padding: 0 30px;
+  }
+  
+  .banner-full-content h1 {
+    font-size: 36px;
+  }
+  
+  .services-cards-section {
+    padding: 60px 0 70px;
+  }
+  
+  .services-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 30px;
+  }
+  
+  .services-cards-header {
+    padding: 0 30px;
+  }
+  
+  .services-cards-header h2 {
+    font-size: 34px;
+  }
+  
+  .services-cta-container {
+    padding: 50px 30px;
+  }
+  
+  .services-cta-container h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-banner-full {
+    padding: 30px 0;
+    min-height: 350px;
+  }
+  
+  .services-banner-full-container {
+    padding: 0 20px;
+  }
+  
+  .banner-full-content h1 {
+    font-size: 30px;
+  }
+  
+  .banner-full-content p {
+    font-size: 15px;
+  }
+  
+  .banner-full-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .banner-full-btn-primary,
+  .banner-full-btn-secondary {
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+  
+  .services-cards-section {
+    padding: 50px 0 60px;
+  }
+  
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 22px;
+  }
+  
+  .services-cards-header {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+  
+  .services-cards-header h2 {
+    font-size: 30px;
+  }
+  
+  .services-cards-header p {
+    font-size: 15px;
+  }
+  
+  .service-card-hover-active {
+    padding: 28px 22px 22px;
+  }
+  
+  .service-card-hover-active h3 {
+    font-size: 19px;
+  }
+  
+  .service-card-hover-active p {
+    font-size: 14px;
+  }
+  
+  .service-card-hover-active-feature {
+    font-size: 13px;
+  }
+  
+  .service-card-hover-active-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  
+  .service-card-hover-active-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .services-cta-container {
+    padding: 40px 20px;
+  }
+  
+  .services-cta-container h2 {
+    font-size: 30px;
+  }
+  
+  .services-cta-container p {
+    font-size: 15px;
+  }
+  
+  .cta-btn {
+    font-size: 15px;
+    padding: 16px 30px;
+  }
+  
+  .c1, .c2, .c3 { display: none; }
+}
+
+@media (max-width: 380px) {
+  .services-banner-full {
+    padding: 24px 0;
+    min-height: 300px;
+  }
+  
+  .services-banner-full-container {
+    padding: 0 16px;
+  }
+  
+  .banner-full-content h1 {
+    font-size: 26px;
+  }
+  
+  .banner-full-content p {
+    font-size: 14px;
+  }
+  
+  .banner-full-btn-primary,
+  .banner-full-btn-secondary {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .services-cards-grid {
+    padding: 0 16px;
+  }
+  
+  .services-cards-header {
+    padding: 0 16px;
+  }
+  
+  .service-card-hover-active {
+    padding: 22px 16px 18px;
+  }
+  
+  .services-cta-container {
+    padding: 32px 16px;
+  }
+  
+  .services-cta-container h2 {
+    font-size: 26px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card-hover-active,
+  .cta-shape {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .service-card-hover-active {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .service-card-hover-active:hover {
+    transform: none !important;
+  }
+  
+  .service-card-hover-active::after {
+    transition: none !important;
+  }
+  
+  .services-banner-full-img {
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+  .services-banner-full {
+    min-height: auto !important;
+    background: #f5f5f5 !important;
+    padding: 40px 0 !important;
+  }
+  
+  .services-banner-full-bg {
+    position: relative !important;
+  }
+  
+  .services-banner-full-overlay {
+    background: rgba(255,255,255,0.9) !important;
+  }
+  
+  .banner-full-content h1 {
+    color: #000 !important;
+  }
+  
+  .banner-full-content h1 span {
+    color: #000 !important;
+  }
+  
+  .banner-full-content h1 span::after {
+    display: none !important;
+  }
+  
+  .banner-full-content p {
+    color: #666 !important;
+  }
+  
+  .banner-full-btn-primary {
+    background: #000 !important;
+    color: #fff !important;
+  }
+  
+  .banner-full-btn-secondary {
+    border: 2px solid #000 !important;
+    color: #000 !important;
+  }
+  
+  .service-card-hover-active {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+  
+  .card-odd {
+    background: #f5f5f5 !important;
+  }
+  
+  .service-card-hover-active::after {
+    display: none !important;
+  }
+  
+  .service-card-hover-active-icon {
+    background: #000 !important;
+    color: #fff !important;
+  }
+  
+  .service-card-hover-active-btn {
+    border: 2px solid #000 !important;
+    background: transparent !important;
+    color: #000 !important;
+  }
+  
+  .services-cards-section {
+    background: #fff !important;
+  }
+  
+  .services-cta-section {
+    border-top: 1px solid #ccc !important;
+    background: #fff !important;
+  }
+  
+  .services-cta-bg {
+    display: none !important;
+  }
+  
+  .services-cta-container h2 {
+    color: #000 !important;
+  }
+  
+  .services-cta-container h2 span {
+    color: #000 !important;
+  }
+  
+  .cta-btn {
+    background: #000 !important;
+    color: #fff !important;
+  }
+}
