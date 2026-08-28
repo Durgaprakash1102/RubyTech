@@ -19,11 +19,11 @@ function Contact() {
   // EMAILJS CONFIGURATION
   // ==========================================
 
-  const EMAILJS_SERVICE_ID = "service_kjty1xc";
-  const EMAILJS_TEMPLATE_ID = "template_hbfsp3o";
+  const EMAILJS_SERVICE_ID = "service_z1iitvn";
+  const EMAILJS_TEMPLATE_ID = "template_1363q74";
 
   // Your EmailJS Public Key
-  const EMAILJS_PUBLIC_KEY = "fl-mdtTK6vUCV0_R0";
+  const EMAILJS_PUBLIC_KEY = "HV_xjwUqO0du0sVeK";
 
   // ==========================================
   // HANDLE INPUT CHANGE

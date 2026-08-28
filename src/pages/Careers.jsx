@@ -16,9 +16,9 @@ function Career() {
   // EMAILJS CONFIGURATION
   // ==========================================
 
-  const SERVICE_ID = "service_kjty1xc";
-  const TEMPLATE_ID = "template_erz2f47";
-  const PUBLIC_KEY = "fl-mdtTK6vUCV0_R0";
+  const SERVICE_ID = "service_z1iitvn";
+  const TEMPLATE_ID = "template_ub1ajl2";
+  const PUBLIC_KEY = "HV_xjwUqO0du0sVeK";
 
   // ==========================================
   // HANDLE SUBMIT
