@@ -107,10 +107,12 @@ function Header() {
         </nav>
 
         {/* CTA */}
-        <Link to="/contact" className="rt-cta">
-          <span>Get In Touch</span>
-          <span className="rt-cta-arrow">↗</span>
-        </Link>
+      <Link to="/contact" className="rt-cta">
+  <span>Get In Touch</span>
+  <span className="rt-cta-icon">
+    <i className="fa-solid fa-phone"></i>
+  </span>
+</Link>
 
         {/* Mobile menu button */}
         <button
